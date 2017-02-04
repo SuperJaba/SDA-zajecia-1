@@ -15,9 +15,38 @@ public class ZadaniaZeScannerem {
 //        int numberFromUser1 = getNumberFromUser("Podaj swoja liczbe ");
 //        System.out.println(min(array));
 //        System.out.println(max(array));
-        System.out.println("Grade system 2000.");
-        double avg = avgOfGrades();
-        System.out.println("Avg of your grade is: " + avg);
+//        System.out.println("Grade system 2000.");
+//        double avg = avgOfGrades();
+//        System.out.println("Avg of your grade is: " + avg);
+        calculator();
+    }
+
+    public static void calculator() {
+        System.out.println("1. Dodawanie");
+        System.out.println("2. Odejmowanie");
+        System.out.println("3. Mnożenie");
+        System.out.println("4. Dzielenie");
+        int operation = getNumberFromUser("Chose your decision");
+        if (operation < 0 || operation > 4) {
+            System.out.println("Wrong data!");
+        } else {
+            int firstNumber = getNumberFromUser("Insert first number");
+            int secondNumber = getNumberFromUser("Insert second number");
+            if (operation == 1) {
+                System.out.println(firstNumber + secondNumber);
+            } else if (operation == 2) {
+                System.out.println(firstNumber - secondNumber);
+            } else if (operation == 3) {
+                System.out.println(firstNumber * secondNumber);
+            } else if (operation == 4) {
+                if (secondNumber == 0) {
+                    System.out.println("Nie dziel przez 0!");
+                }
+                System.out.println(firstNumber / secondNumber);
+            }
+
+        }
+
     }
 
     public static double avgOfGrades() {
