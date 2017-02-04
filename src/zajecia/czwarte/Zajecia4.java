@@ -1,4 +1,6 @@
-package zajecia;
+package zajecia.czwarte;
+
+import java.util.Scanner;
 
 /**
  * Created by RENT on 2017-02-04.
@@ -12,17 +14,23 @@ public class Zajecia4 {
 //        double value = celsiucToFahrentheit(7);
 //        System.out.println(value);
         sum(array);
-        System.out.println("Suma wszystkich elementow tablicy: " + sum(array));
         lenght(array);
-        System.out.println("Długość tablicy: " + lenght(array));
         average(array);
-        System.out.println("Srednia z tablicy: " + average(array));
         product(array);
-        System.out.println("Iloczyn elementow tablicy: " + product(array));
         sumOfEven(array);
-        System.out.println("Suma parzystych z tablicy: " + sumOfEven(array));
+        statistics(array);
+
+
+
     }
 
+    public static void statistics(int[] array) {
+        System.out.println("Suma wszystkich elementow tablicy: " + sum(array));
+        System.out.println("Długość tablicy: " + lenght(array));
+        System.out.println("Srednia z tablicy: " + average(array));
+        System.out.println("Iloczyn elementow tablicy: " + product(array));
+        System.out.println("Suma parzystych z tablicy: " + sumOfEven(array));
+    }
 
     public static void printLessThan(int number) {
         for (int i = 0; i <= number; i++) {
@@ -101,7 +109,7 @@ public class Zajecia4 {
         return sum;
     }
 
-    public static int numberOfEven(int[] array){
+    public static int numberOfEven(int[] array) {
         int counter = 0;
         for (int i = 0; i < array.length; i++) {
             if (isEven(array[i])) {
@@ -125,12 +133,14 @@ public class Zajecia4 {
 
             }
         }
+        return sum;
     }
 
-    public static boolean isEven (int number){
-        if (number % 2 == 0){
+    public static boolean isEven(int number) {
+        if (number % 2 == 0) {
             return true;
-        } return false;
+        }
+        return false;
     }
 }
 
