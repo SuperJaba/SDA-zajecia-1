@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ZadaniaZeScannerem {
     public static void main(String[] args) {
-//        calculator();
-        bmi();
+        calculator();
+//        bmi();
     }
 
     public static void bmi() {
@@ -15,8 +15,8 @@ public class ZadaniaZeScannerem {
         if (waga <= 0) {
             System.out.println("Nie mozesz nic nie wazyc! Zjedz cos szybko!");
         } else {
-            if (wzrost <=0){
-                System.out.println("Jak mozesz byc taki malucki?? \n Gdzie masz mleko?");
+            if (wzrost <= 0) {
+                System.out.println("Jak mozesz byc taki maluczki?? \nGdzie masz mleko?");
             } else {
 
 
@@ -59,7 +59,7 @@ public class ZadaniaZeScannerem {
         for (int i = 0; i < array.length; i++) {
             array[i] = getNumberFromUser("Insert " + (i + 1) + " grade:");
         }
-        return Zajecia4.avg(array);
+        return Zajecia4.average(array);
     }
 
     public static void compareThreeNumbersFromUser() {
@@ -108,7 +108,7 @@ public class ZadaniaZeScannerem {
 
     public static void listEvenNumbersFromUser() {
         int number = getNumberFromUser();
-        Zajecia4.printEvenLessThan(number);
+        Zajecia4.printEvenLessThen(number);
     }
 
     public static int getNumberFromUser() {
