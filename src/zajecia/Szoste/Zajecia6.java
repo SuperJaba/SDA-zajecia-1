@@ -10,7 +10,36 @@ public class Zajecia6 {
     public static void main(String[] args) {
 //        int reCounter = avgUntil(40);
 //        System.out.println(reCounter);
-        calculator();
+//        calculator();
+        System.out.println(cezarCode("Wojna", 10));
+        System.out.println(cezarCode("Hello World"));
+        System.out.println(cezarCode("lubie Koty"));
+
+        //zadanie do domu - zakodaowac String jak zadanieDo5 w tablicach
+
+    }
+
+    public static String decodeCezarCode(String coddedMessege){
+        return a;
+    }
+
+    public static String decodeCezarCode(String coddedMessage, int key){
+        char[] charCoded = coddedMessage.toCharArray();
+        for (int i = 0; i < charCoded.length; i++) {
+            charCoded[i] = (char)(charCoded[i] - key);
+        }
+    }
+
+    public static String cezarCode(String message) {
+        return cezarCode(message, 1);
+    }
+
+    public static String cezarCode(String message, int key) {
+        char[] charArray = message.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char)(charArray[i] + key);
+        }
+        return String.valueOf(charArray);
     }
 
     public static void calculator() {
