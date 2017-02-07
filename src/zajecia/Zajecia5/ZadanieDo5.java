@@ -23,7 +23,7 @@ public class ZadanieDo5 {
     }
 
     public static int[] arrayAdres() {
-        int[] array = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] array = new int[10];
         System.out.println("Wartosc -1 konczy pobieranie liczb.");
         boolean flag = true;
         while (flag) {
