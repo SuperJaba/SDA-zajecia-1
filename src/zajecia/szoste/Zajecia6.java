@@ -6,15 +6,41 @@ import java.util.Scanner;
 
 public class Zajecia6 {
     public static void main(String[] args) {
-//        int numberOfElements = avgUntil(4);
-//        System.out.println("Podano " + numberOfElements + " liczb.");
-//        calculator();
-//        Scanner scanner = new Scanner(System.in);
-//        int first = scanner.nextInt();
-//        String next = scanner.next();
-//        int second = scanner.nextInt();
-//        System.out.println(first + next + second + "=" +);
-        calculator();
+        System.out.println("Zakodowane: ");
+        String message = "Wojna";
+        String codded = cezarCode(message, 2);
+        System.out.println(codded);
+
+        System.out.println("Odkodowane: ");
+        System.out.println(decodeCezarCode(codded, 2));
+    }
+
+    public static String decodeCezarCode(String coddedMessage, int key) {
+        return cezarCode(coddedMessage, -key);
+    }
+
+    public static String decodeCezarCode(String coddedMessage) {
+        return cezarCode(coddedMessage, -1);
+    }
+
+    public static String cezarCode(String message) {
+        return cezarCode(message, 1);
+    }
+
+    public static String cezarCode(String message, int key) {
+        char[] charArray = message.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            charArray[i] = (char) (charArray[i] + key);
+        }
+        return String.valueOf(charArray);
+    }
+
+    public static boolean isSmallLetter(char a) {
+        if (a >= 97 && a <= 122) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static void calculator() {
