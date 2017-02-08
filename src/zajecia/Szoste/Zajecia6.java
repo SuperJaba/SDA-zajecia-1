@@ -14,13 +14,14 @@ public class Zajecia6 {
         System.out.println(cezarCode("Wojna", 10));
         System.out.println(cezarCode("Hello World"));
         System.out.println(cezarCode("lubie Koty"));
+        int key = 1;
 
         //zadanie do domu - zakodaowac String jak zadanieDo5 w tablicach
 
     }
 
     public static String decodeCezarCode(String coddedMessege){
-        return a;
+        return decodeCezarCode(coddedMessege, 1);
     }
 
     public static String decodeCezarCode(String coddedMessage, int key){
@@ -28,6 +29,7 @@ public class Zajecia6 {
         for (int i = 0; i < charCoded.length; i++) {
             charCoded[i] = (char)(charCoded[i] - key);
         }
+        return String.valueOf(charCoded);
     }
 
     public static String cezarCode(String message) {
