@@ -15,40 +15,27 @@ public class Zajecia7 {
         String message = "Ala ma 2 koty i 3 psy";
         int sum = sumFromString(message);
         System.out.println("Ala ma " + sum + " zwierzat.");
-        firsBracletCheck(roundBracletsCheck(")()()()()"));
+        boolean check = checkRoundBraces("()()()()");
+        System.out.println(check);
     }
 
-    public static void firsBracletCheck(char[] charArray) {
-        for (int i = 0; i < charArray[1]; i++) {
-            if (charArray[0] == 41) {
-                System.out.println("Zaczynasz od nawiasu zamykajacego.");
-                break;
-            }
-        }
-    }
-
-    public static char[] roundBracletsCheck(String message) {
+    public static boolean checkRoundBraces(String message) {
+        boolean flag = true;
+        int counter = 0;
         char[] charArray = message.toCharArray();
-        int counterLeft = 0;
-        int counterRight = 0;
         for (int i = 0; i < charArray.length; i++) {
-            if (charArray[i] == 41) {
-                counterRight++;
-//                System.out.println("Zaczynasz nawiasy w wyrazeniu od zamykajacego.");
-            } else if (charArray[i] == 40) {
-                counterLeft++;
+            if (charArray[i] == '(') {
+                counter++;
+            } else if (charArray[i] == ')') {
+                counter--;
+                if (counter == 0) {
+//                    flag = false;
+                    break;
+                }
             }
         }
-        if (counterLeft == counterRight) {
-            System.out.println("Wszystkie nawiasy sa do pary");
-        } else if (counterLeft > counterRight){
-            System.out.println("Nawiasow otwierajacych jest wiecej");
-        } else  {
-            System.out.println("Nawiasow zamykajacych jest wiecej");
-        }
-        return charArray;
+        return counter == 0;
     }
-
 
     public static int sumFromString(String message) {
         char[] charArray = message.toCharArray();
@@ -64,7 +51,7 @@ public class Zajecia7 {
     public static boolean isPalindrom(String message) {
         char[] charArray = message.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
-            if (charArray[i] != charArray[charArray.length -i -1]) {
+            if (charArray[i] != charArray[charArray.length - i - 1]) {
                 return false;
             }
         }
@@ -75,8 +62,8 @@ public class Zajecia7 {
         char[] charArray = message.toCharArray();
         for (int i = 0; i < charArray.length / 2; i++) {
             char tmp = charArray[i];
-            charArray[i] = charArray[charArray.length - i -1];
-            charArray[charArray.length - i -1] = tmp;
+            charArray[i] = charArray[charArray.length - i - 1];
+            charArray[charArray.length - i - 1] = tmp;
         }
         return String.valueOf(charArray);
     }
@@ -129,18 +116,18 @@ public class Zajecia7 {
 //        }
     }
 
-        public static int[] stringStatistics(String messege){
-            int[] statisticArray = new int[26];
-            char[] messegArray = messege.toCharArray();
-            for (int i = 0; i < messegArray.length; i++) {
-                if (messegArray[i] >= 97 && messegArray[i] <= 122) {
-                    int index = messegArray[i] - 97;
-                    statisticArray[index]++;
-                }
+    public static int[] stringStatistics(String messege) {
+        int[] statisticArray = new int[26];
+        char[] messegArray = messege.toCharArray();
+        for (int i = 0; i < messegArray.length; i++) {
+            if (messegArray[i] >= 97 && messegArray[i] <= 122) {
+                int index = messegArray[i] - 97;
+                statisticArray[index]++;
             }
-
-            return statisticArray;
         }
+
+        return statisticArray;
+    }
 
     public static void printStringStatistics(int[] array) {
         for (int i = 0; i < array.length; i++) {
