@@ -15,6 +15,38 @@ public class Zajecia7 {
         String message = "Ala ma 2 koty i 3 psy";
         int sum = sumFromString(message);
         System.out.println("Ala ma " + sum + " zwierzat.");
+        firsBracletCheck(roundBracletsCheck(")()()()()"));
+    }
+
+    public static void firsBracletCheck(char[] charArray) {
+        for (int i = 0; i < charArray[1]; i++) {
+            if (charArray[0] == 41) {
+                System.out.println("Zaczynasz od nawiasu zamykajacego.");
+                break;
+            }
+        }
+    }
+
+    public static char[] roundBracletsCheck(String message) {
+        char[] charArray = message.toCharArray();
+        int counterLeft = 0;
+        int counterRight = 0;
+        for (int i = 0; i < charArray.length; i++) {
+            if (charArray[i] == 41) {
+                counterRight++;
+//                System.out.println("Zaczynasz nawiasy w wyrazeniu od zamykajacego.");
+            } else if (charArray[i] == 40) {
+                counterLeft++;
+            }
+        }
+        if (counterLeft == counterRight) {
+            System.out.println("Wszystkie nawiasy sa do pary");
+        } else if (counterLeft > counterRight){
+            System.out.println("Nawiasow otwierajacych jest wiecej");
+        } else  {
+            System.out.println("Nawiasow zamykajacych jest wiecej");
+        }
+        return charArray;
     }
 
 
