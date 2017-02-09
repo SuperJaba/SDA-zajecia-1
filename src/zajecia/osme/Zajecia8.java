@@ -6,9 +6,11 @@ import java.math.BigInteger;
 
 public class Zajecia8 {
     public static void main(String[] args) {
-        System.out.println(startsWith2("Ala ma kota", "Ala"));
-        System.out.println(startsWith2("Ala ma kota", "Aleksander"));
-        System.out.println(startsWith2("Aleksander", "Ala ma kota"));
+        String message = "Ala ma kota";
+        String[] array = split2(message);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
     }
 
 
@@ -39,6 +41,41 @@ public class Zajecia8 {
             }
         }
         return flag;
+    }
+
+    public static String[] split1(String message) {
+        return message.split(" ");
+    }
+
+    public static String[] split2(String message) {
+        String[] strings = new String[100];
+        int i = 0;
+        boolean flag = true;
+        int tmp = 0;
+        while (flag) {
+            int indexOfSpace = message.indexOf(' ', tmp);
+            String substring;
+            if (indexOfSpace == -1) {
+                substring = message.substring(tmp);
+            } else {
+                substring = message.substring(tmp, indexOfSpace);
+            }
+            tmp = indexOfSpace + 1;
+            strings[i] = substring;
+            i++;
+            if (indexOfSpace == -1) {
+                flag = false;
+            }
+        }
+        return rewrite(strings, i);
+    }
+
+    public static String[] rewrite(String[] array, int size) {
+        String[] tmpArray = new String[size];
+        for (int i = 0 ; i < size ; i ++) {
+            tmpArray[i] = array[i];
+        }
+        return tmpArray;
     }
 
     public static int sumOfNumberDigits(int number) {
