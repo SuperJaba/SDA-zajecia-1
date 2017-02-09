@@ -6,30 +6,12 @@ import java.math.BigInteger;
 
 public class Zajecia8 {
     public static void main(String[] args) {
-//        System.out.println(fibonacciNumberRec(0));
-//        System.out.println(fibonacciNumberRec(1));
-//        System.out.println(fibonacciNumberRec(2));
-//        System.out.println(fibonacciNumberRec(3));
-//        System.out.println(fibonacciNumberRec(4));
-//        System.out.println(fibonacciNumberRec(5));
-//        long l = System.currentTimeMillis();
-//        System.out.println(fibonacciNumber(43));
-//        System.out.println(System.currentTimeMillis() - l);
-//        String message = switchCase("ABCdefGHIjkl");
-//        System.out.println(message);
-//        System.out.println(switchCaseWithBuilder("KLJHLKjlkjnLKJNLkjnlkjnLJKNLKJN"));
-//        System.out.println(-3 % 10);
-//        System.out.println(sumOfNumberDigits(1234));
         System.out.println(startsWith2("Ala ma kota", "Ala"));
         System.out.println(startsWith2("Ala ma kota", "Aleksander"));
         System.out.println(startsWith2("Aleksander", "Ala ma kota"));
     }
 
 
-    //"Ala ma kota" -> {"Ala", "ma", "kota"}
-//    public static String[] words(String message) {
-//        return null;
-//    }
 
     public static int sumOfNumberDigitsWithString(int number) {
         String numberAsString = String.valueOf(number);
