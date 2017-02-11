@@ -2,8 +2,6 @@ package zajecia.osme;
 
 import zajecia.siodme.Zajecia7;
 
-import java.math.BigInteger;
-
 public class Zajecia8 {
     public static void main(String[] args) {
         String message = "Ala ma kota";
@@ -12,8 +10,6 @@ public class Zajecia8 {
             System.out.println(array[i]);
         }
     }
-
-
 
     public static int sumOfNumberDigitsWithString(int number) {
         String numberAsString = String.valueOf(number);
