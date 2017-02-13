@@ -18,6 +18,13 @@ public class Zajecia8 {
         System.out.println(startsWith2("Ala ma kota", "Aleksander"));
         System.out.println(startsWith3("Ala ma 2 koty", "Aleksiej"));
         System.out.println(split1("Ala ma kota"));
+        String message = "Ala ma kota";
+        System.out.println(startsWith2("Ala ma kota", "Aleksander"));
+        String[] array = split2(message);
+        System.out.println(startsWith2("Aleksander", "Ala ma kota"));
+        for (int i = 0; i < array.length; i++) {
+            System.out.println(array[i]);
+        }
     }
 
     public static String[] split1(String message) {
@@ -44,7 +51,15 @@ public class Zajecia8 {
                 flag = false;
             }
         }
-        return null;
+        return rewrite(strings, i);
+    }
+
+    public static String[] rewrite(String[] array, int size) {
+        String[] tmpArray = new String[size];
+        for (int i = 0; i < size; i++) {
+            tmpArray[i] = array[i];
+        }
+        return tmpArray;
     }
 
     public static boolean startsWith1(String message, String expresion) {
